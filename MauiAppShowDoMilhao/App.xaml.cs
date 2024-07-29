@@ -34,13 +34,26 @@ public partial class App : Application
         new Pergunta
         {
             Id = 3,
-            Enunciado = "Qu?",
+            Enunciado = "Qual o campeão da Copa do Mundo de Futebol de 2022?",
             Alternativas = new()
             {
-                new Alternativa { Correta = false, Descricao = "MARGARIDA" },
-                new Alternativa { Correta = true, Descricao = "MINNIE" },
-                new Alternativa { Correta = false, Descricao = "A PEQUENA SEREIA" },
-                new Alternativa { Correta = false, Descricao = "OLÍVIA PALITO" }
+                new Alternativa { Correta = true, Descricao = "ARGENTINA" },
+                new Alternativa { Correta = false, Descricao =  "FRANÇA" },
+                new Alternativa { Correta = false, Descricao = "ITÁLIA" },
+                new Alternativa { Correta = false, Descricao = "BRASIL" }
+            }
+        },
+
+        new Pergunta
+        {
+            Id = 4,
+            Enunciado = "Qual o campeão da Copa do Mundo de 2022?",
+            Alternativas = new()
+            {
+                new Alternativa { Correta = true, Descricao = "ARGENTINA" },
+                new Alternativa { Correta = false, Descricao =  "FRANÇA" },
+                new Alternativa { Correta = false, Descricao = "ITÁLIA" },
+                new Alternativa { Correta = false, Descricao = "BRASIL" }
             }
         },
     };
