@@ -7,8 +7,6 @@
         <Button Text="Sortear Fácil" Clicked="Button_Clicked"/>
 
         <Label Text="{Binding Enunciado}"/>
-
-        <Label Text="{Binding Enunciado}"/>
         <Label Text="{Binding Path=Alternativas[0].Descricao}"/>
         <Label Text="{Binding Path=Alternativas[1].Descricao}"/>
         <Label Text="{Binding Path=Alternativas[2].Descricao}"/>
