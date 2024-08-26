@@ -499,7 +499,9 @@ public partial class App : Application
                 new Alternativa { Correta = false, Descricao = "MÉXICO" }
             }
         },
-        List < Pergunta > perguntas_dificil = new()
+    };
+
+    List < Pergunta > perguntas_dificieis = new()
         {
             new Pergunta
             {
@@ -746,6 +748,33 @@ public partial class App : Application
             },
         };
     };
+public static Pergunta getRandomPerguntaFacil()
+{
+    Random r = new Random();
+    int Sorteado = r.Next(0, perguntas_faceis.Count);
+    return perguntas_faceis[Sorteado];
 }
+
+public static Pergunta getRandomPerguntaMedia()
+{
+    Random r = new Random();
+    int Sorteado = r.Next(1, perguntas_medias.Count);
+    return perguntas_medias[Sorteado];
+}
+
+public static Pergunta getRandomPerguntaDificil()
+{
+    Random r = new Random();
+    int Sorteado = r.Next(2, perguntas_dificeis.Count);
+    return perguntas_dificeis[Sorteado];
+}
+
+public static Pergunta getRandomPerguntaFinal()
+{
+    Random r = new Random();
+    int Sorteado = r.Next(3, perguntas_finais.Count);
+    return perguntas_finais[Sorteado];
+}
+
 
 
