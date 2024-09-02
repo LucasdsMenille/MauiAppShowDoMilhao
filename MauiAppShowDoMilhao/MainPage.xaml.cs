@@ -5,24 +5,12 @@ namespace MauiAppShowDoMilhao
     {
         double premio = 0;
         int pergunta_count = 0;
+        double count = 0;
 
         public MainPage()
         {
             InitializeComponent();
         }
-
-        private void OnCounterClicked(object sender, EventArgs e)
-        {
-            count++;
-
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
-        }
-
         private async void Button_CLicked_Proxima(object sender, EventArgs e)
         {
             bool acertou = false;
@@ -77,21 +65,22 @@ namespace MauiAppShowDoMilhao
             }
             void avanca_Pergunta()
             {
-                if (pergunta_count <= 5)
+                if (pergunta_count <= 4)
                 {
                     premio = premio + 1000;
-                    this.BindingContext = App.getRandomPereguntaFacil();
+                    this.BindingContext = App.getRandomPereguntaFacil();            
                 }
 
                 if (pergunta_count > 5 && pergunta_count <= 10)
                 {
                     premio = premio + 10000;
-                    this.BindingContext = App.getRandomPereguntaFacil();
+                    this.BindingContext = App.getRandomPereguntaMedia();
                 }
 
                 if (pergunta_count > 10 && pergunta_count < 15)
                 {
                     premio = premio + 100000;
+                    this.BindingContext = App.getRandomPereguntaDificil();
                 }
 
             }

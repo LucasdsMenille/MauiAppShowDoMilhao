@@ -4,7 +4,7 @@ namespace MauiAppShowDoMilhao;
 
 public partial class App : Application
 {
-    List<Pergunta> perguntas_faceis = new()
+    static List<Pergunta> perguntas_faceis = new()
     {
         new Pergunta
         {
@@ -254,7 +254,7 @@ public partial class App : Application
 
     };
 
-    List<Pergunta> perguntas_medias = new()
+    static List<Pergunta> perguntas_medias = new()
     {
         new Pergunta
         {
@@ -501,11 +501,11 @@ public partial class App : Application
         },
     };
 
-    List < Pergunta > perguntas_dificieis = new()
+    static List<Pergunta> perguntas_dificeis = new()
         {
             new Pergunta
             {
-                Id = 21,
+                Id = 41,
                 Enunciado = "Quantos jogadores um jogo de vôlei reúne na quadra??",
                 Alternativas = new()
                 {
@@ -518,7 +518,7 @@ public partial class App : Application
             },
             new Pergunta
             {
-                Id = 22,
+                Id = 42,
                 Enunciado = "A cidade de Pompéia, que foi soterrada por um vulcão fica em qual desses países?",
                 Alternativas = new()
                 {
@@ -530,7 +530,7 @@ public partial class App : Application
             },
             new Pergunta
             {
-                Id = 23,
+                Id = 43,
                 Enunciado = "Qual o campeão da Copa do Mundo de Futebol de 1974?",
                 Alternativas = new()
                 {
@@ -543,7 +543,7 @@ public partial class App : Application
 
             new Pergunta
             {
-                Id = 24,
+                Id = 44,
                 Enunciado = "O alpinismo é praticado em que lugar??",
                 Alternativas = new()
                 {
@@ -556,7 +556,7 @@ public partial class App : Application
 
             new Pergunta
             {
-                Id = 25,
+                Id = 45,
                 Enunciado = "Que imperador pôs fogo em Roma?",
                 Alternativas = new()
                 {
@@ -568,7 +568,7 @@ public partial class App : Application
             },
             new Pergunta
             {
-                Id = 26,
+                Id = 46,
                 Enunciado = "A cidade de Pompéia, que foi soterrada por um vulcão fica em qual desses países?",
                 Alternativas = new()
                 {
@@ -580,7 +580,7 @@ public partial class App : Application
             },
             new Pergunta
             {
-                Id = 27,
+                Id = 47,
                 Enunciado = "Como eram chamados os pilotos suicidas da Segunda Guerra?",
                 Alternativas = new()
                 {
@@ -592,7 +592,7 @@ public partial class App : Application
             },
             new Pergunta
             {
-                Id = 28,
+                Id = 48,
                 Enunciado = "O Coliseu é um monumento histórico de que cidade européia?",
                 Alternativas = new()
                 {
@@ -604,7 +604,7 @@ public partial class App : Application
             },
             new Pergunta
             {
-                Id = 29,
+                Id = 49,
                 Enunciado = "Que rio corta a cidade de Paris, na França?",
                 Alternativas = new()
                 {
@@ -616,7 +616,7 @@ public partial class App : Application
             },
             new Pergunta
             {
-                Id = 30,
+                Id = 50,
                 Enunciado = "Quantos quilates tem o ouro puro?",
                 Alternativas = new()
                 {
@@ -628,7 +628,7 @@ public partial class App : Application
             },
             new Pergunta
             {
-                Id = 31,
+                Id = 51,
                 Enunciado = "Que atriz protagonizou o filme “Titanic”?",
                 Alternativas = new()
                 {
@@ -640,7 +640,7 @@ public partial class App : Application
             },
             new Pergunta
             {
-                Id = 32,
+                Id = 52,
                 Enunciado = "Como é chamada a doença que causa perda desigual da melanina??",
                 Alternativas = new()
                 {
@@ -652,7 +652,7 @@ public partial class App : Application
             },
             new Pergunta
             {
-                Id = 33,
+                Id = 53,
                 Enunciado = "No filme, quem era parceiro de crimes da Bonnie??",
                 Alternativas = new()
                 {
@@ -664,7 +664,7 @@ public partial class App : Application
             },
             new Pergunta
             {
-                Id = 34,
+                Id = 54,
                 Enunciado = "Que planta era usada para fabricação de papel no antigo Egito?",
                 Alternativas = new()
                 {
@@ -676,7 +676,7 @@ public partial class App : Application
             },
             new Pergunta
             {
-                Id = 35,
+                Id = 55,
                 Enunciado = "Que país europeu tem como atração a tourada?",
                 Alternativas = new()
                 {
@@ -688,7 +688,7 @@ public partial class App : Application
             },
             new Pergunta
             {
-                Id = 36,
+                Id = 56,
                 Enunciado = "Quem pintou o quadro “La Gioconda”, conhecido como “Mona Lisa”?",
                 Alternativas = new()
                 {
@@ -700,7 +700,7 @@ public partial class App : Application
             },
             new Pergunta
             {
-                Id = 37,
+                Id = 57,
                 Enunciado = "Quando começou e terminou a Primeira Guerra Mundial?",
                 Alternativas = new()
                 {
@@ -712,7 +712,7 @@ public partial class App : Application
             },
             new Pergunta
             {
-                Id = 38,
+                Id = 58,
                 Enunciado = "Qual é a letra do alfabeto que simboliza o número dez em algarismo romano?",
                 Alternativas = new()
                 {
@@ -724,7 +724,7 @@ public partial class App : Application
             },
             new Pergunta
             {
-                Id = 39,
+                Id = 59,
                 Enunciado = "Em que continente se situa o rio Nilo??",
                 Alternativas = new()
                 {
@@ -736,7 +736,7 @@ public partial class App : Application
             },
             new Pergunta
             {
-                Id = 40,
+                Id = 60,
                 Enunciado = "Nova Delhi é a capital de que país?",
                 Alternativas = new()
                 {
@@ -747,34 +747,148 @@ public partial class App : Application
                 }
             },
         };
-    };
-public static Pergunta getRandomPerguntaFacil()
-{
-    Random r = new Random();
-    int Sorteado = r.Next(0, perguntas_faceis.Count);
-    return perguntas_faceis[Sorteado];
+
+    static List<Pergunta> perguntas_finais = new()
+        {
+            new Pergunta
+            {
+                Id = 61,
+                Enunciado = "Quantos jogadores um jogo de vôlei reúne na quadra??",
+                Alternativas = new()
+                {
+                    new Alternativa { Correta = false, Descricao = "SEIS" },
+                    new Alternativa { Correta = true, Descricao = "OITO" },
+                    new Alternativa { Correta = false, Descricao = "ONZE" },
+                    new Alternativa { Correta = false, Descricao = "DOZE" }
+                }
+
+            },
+            new Pergunta
+            {
+                Id = 62,
+                Enunciado = "A cidade de Pompéia, que foi soterrada por um vulcão fica em qual desses países?",
+                Alternativas = new()
+                {
+                    new Alternativa { Correta = false, Descricao = "JAPÃO" },
+                    new Alternativa { Correta = true, Descricao = "MÉXICO" },
+                    new Alternativa { Correta = false, Descricao = "ITÁLIA" },
+                    new Alternativa { Correta = false, Descricao = "BRASIL" }
+                }
+            },
+            new Pergunta
+            {
+                Id = 63,
+                Enunciado = "Qual o campeão da Copa do Mundo de Futebol de 1974?",
+                Alternativas = new()
+                {
+                    new Alternativa { Correta = true, Descricao = "ALEMANHA" },
+                    new Alternativa { Correta = false, Descricao = "FRANÇA" },
+                    new Alternativa { Correta = false, Descricao = "ITÁLIA" },
+                    new Alternativa { Correta = false, Descricao = "BRASIL" }
+                }
+            },
+
+            new Pergunta
+            {
+                Id = 64,
+                Enunciado = "O alpinismo é praticado em que lugar??",
+                Alternativas = new()
+                {
+                    new Alternativa { Correta = true, Descricao = "MAR" },
+                    new Alternativa { Correta = false, Descricao = "RIO" },
+                    new Alternativa { Correta = false, Descricao = "MONTANHA" },
+                    new Alternativa { Correta = false, Descricao = "PRAIA" }
+                }
+            },
+
+            new Pergunta
+            {
+                Id = 65,
+                Enunciado = "Que imperador pôs fogo em Roma?",
+                Alternativas = new()
+                {
+                    new Alternativa { Correta = false, Descricao = "TRAJANO" },
+                    new Alternativa { Correta = false, Descricao = "BRUTOS" },
+                    new Alternativa { Correta = true, Descricao = "NERO" },
+                    new Alternativa { Correta = false, Descricao = "CALÍGULA" }
+                }
+            },
+            
+            
+        };
+
+    static List<Pergunta> perguntas_sorteadas = new();
+
+
+
+    public static Pergunta getRandomPerguntaFacil()
+    {
+        Random r = new Random();
+        Pergunta pergunta_sorteada;
+        while (true) 
+        {
+            int sorteado = r.Next(1, 20);
+            pergunta_sorteada= perguntas_faceis[sorteado];
+            if (!perguntas_sorteadas.Contains(pergunta_sorteada))
+            {
+                perguntas_sorteadas.Add(pergunta_sorteada);
+                break;
+            }
+        }
+        return pergunta_sorteada;
+    }
+
+    public static Pergunta getRandomPerguntaMedia()
+    {
+        Random r = new Random();
+        Pergunta pergunta_sorteada;
+        while (true)
+        {
+            int sorteado = r.Next(21, 40);
+            pergunta_sorteada = perguntas_medias[sorteado];
+            if (!perguntas_sorteadas.Contains(pergunta_sorteada))
+            {
+                perguntas_sorteadas.Add(pergunta_sorteada);
+                break;
+            }
+        }
+        return pergunta_sorteada;
+    }
+
+    public static Pergunta getRandomPerguntaDificil()
+    {
+        Random r = new Random();
+        Pergunta pergunta_sorteada;
+        while (true)
+        {
+            int sorteado = r.Next(41, 60);
+            pergunta_sorteada = perguntas_dificeis[sorteado];
+            if (!perguntas_sorteadas.Contains(pergunta_sorteada))
+            {
+                perguntas_sorteadas.Add(pergunta_sorteada);
+                break;
+            }
+        }
+        return pergunta_sorteada;
+    }
+
+    public static Pergunta getRandomPerguntaFinal()
+    {
+        Random r = new Random();
+        Pergunta pergunta_sorteada;
+        while (true)
+        {
+            int sorteado = r.Next(61, 65);
+            pergunta_sorteada = perguntas_finais[sorteado];
+            if (!perguntas_sorteadas.Contains(pergunta_sorteada))
+            {
+                perguntas_sorteadas.Add(pergunta_sorteada);
+                break;
+            }
+        }
+        return pergunta_sorteada;
+    }
+
+
+
 }
-
-public static Pergunta getRandomPerguntaMedia()
-{
-    Random r = new Random();
-    int Sorteado = r.Next(1, perguntas_medias.Count);
-    return perguntas_medias[Sorteado];
-}
-
-public static Pergunta getRandomPerguntaDificil()
-{
-    Random r = new Random();
-    int Sorteado = r.Next(2, perguntas_dificeis.Count);
-    return perguntas_dificeis[Sorteado];
-}
-
-public static Pergunta getRandomPerguntaFinal()
-{
-    Random r = new Random();
-    int Sorteado = r.Next(3, perguntas_finais.Count);
-    return perguntas_finais[Sorteado];
-}
-
-
-
