@@ -76,8 +76,8 @@ namespace MauiAppShowDoMilhao
                     track = "500000.wav";
                     break;
 
-
             }
+
             AudioManager.Current.CreatePlayer(FileSystem.OpenAppPackageFileAsync(track).Result).Play();
         }
 
@@ -143,12 +143,10 @@ namespace MauiAppShowDoMilhao
             }
             void avanca_Pergunta()
             {
-                
-                if (pergunta_count <= 5)
+                if (pergunta_count <= 4)
                 {
                     premio = premio + 1000;
-                    this.BindingContext = App.getRandomPerguntaFacil();
-                    lbl_nivel.Text = "Fácil";
+                    this.BindingContext = App.getRandomPereguntaFacil();            
                 }
 
                 if(pergunta_count ==6)
@@ -161,29 +159,13 @@ namespace MauiAppShowDoMilhao
                 if (pergunta_count > 6 && pergunta_count <= 10)
                 {
                     premio = premio + 10000;
-                    this.BindingContext = App.getRandomPerguntaMedia();
-                        lbl_nivel.Text = "Média";
-                    }
-
-                if (pergunta_count == 11)
-                {
-                    premio = 100000;
-                    this.BindingContext = App.getRandomPerguntaDificil();
-                    lbl_nivel.Text = "Difícil";
+                    this.BindingContext = App.getRandomPereguntaMedia();
                 }
 
-                if (pergunta_count > 11 && pergunta_count <= 15)
+                if (pergunta_count > 10 && pergunta_count < 15)
                 {
                     premio = premio + 100000;
-                    this.BindingContext = App.getRandomPerguntaDificil();
-                    lbl_nivel.Text = "Difícil";
-                    }
-
-                if (pergunta_count == 16)
-                {
-                    premio = 1000000;
-                    this.BindingContext = App.getRandomPerguntaFinal();
-                    lbl_nivel.Text = "Final";
+                    this.BindingContext = App.getRandomPereguntaDificil();
                 }
 
                 lbl_premio.Text = premio.ToString("C");
