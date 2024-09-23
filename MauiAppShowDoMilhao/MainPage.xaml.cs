@@ -25,7 +25,7 @@ namespace MauiAppShowDoMilhao
         private void toca_som()
         {
             string track = "";
-            switch (pergunta_count) 
+            switch (pergunta_count)
             {
                 case 1:
                     track = "1000.wav";
@@ -72,10 +72,15 @@ namespace MauiAppShowDoMilhao
                 case 15:
                     track = "500000.wav";
                     break;
+                case 16:
+                    track = "500000.wav";
+                    break;
+
 
             }
-
             AudioManager.Current.CreatePlayer(FileSystem.OpenAppPackageFileAsync(track).Result).Play();
+        }
+
 
 
         private async void Button_CLicked_Proxima(object sender, EventArgs e)
@@ -120,9 +125,15 @@ namespace MauiAppShowDoMilhao
                 }
             }
 
+
             if (acertou)
             {
+                Stream track = FileSystem.OpenAppPackageFileAsync("parabens.wav").Result;
+                AudioManager.Current.CreatePlayer(track).Play();
+
                 await DisplayAlert("Acertou!", resp, "OK");
+                pergunta_count++;
+                toca_som();
                 avanca_Pergunta();
 
             }
@@ -132,23 +143,51 @@ namespace MauiAppShowDoMilhao
             }
             void avanca_Pergunta()
             {
-                if (pergunta_count <= 4)
+                
+                if (pergunta_count <= 5)
                 {
                     premio = premio + 1000;
-                    this.BindingContext = App.getRandomPereguntaFacil();            
+                    this.BindingContext = App.getRandomPerguntaFacil();
+                    lbl_nivel.Text = "Fácil";
                 }
 
-                if (pergunta_count > 5 && pergunta_count <= 10)
+                if(pergunta_count ==6)
+                {
+                    premio = 10000;
+                    this.BindingContext = App.getRandomPerguntaMedia();
+                    lbl_nivel.Text = "Média";
+                }
+
+                if (pergunta_count > 6 && pergunta_count <= 10)
                 {
                     premio = premio + 10000;
-                    this.BindingContext = App.getRandomPereguntaMedia();
+                    this.BindingContext = App.getRandomPerguntaMedia();
+                        lbl_nivel.Text = "Média";
+                    }
+
+                if (pergunta_count == 11)
+                {
+                    premio = 100000;
+                    this.BindingContext = App.getRandomPerguntaDificil();
+                    lbl_nivel.Text = "Difícil";
                 }
 
-                if (pergunta_count > 10 && pergunta_count < 15)
+                if (pergunta_count > 11 && pergunta_count <= 15)
                 {
                     premio = premio + 100000;
-                    this.BindingContext = App.getRandomPereguntaDificil();
+                    this.BindingContext = App.getRandomPerguntaDificil();
+                    lbl_nivel.Text = "Difícil";
+                    }
+
+                if (pergunta_count == 16)
+                {
+                    premio = 1000000;
+                    this.BindingContext = App.getRandomPerguntaFinal();
+                    lbl_nivel.Text = "Final";
                 }
+
+                lbl_premio.Text = premio.ToString("C");
+                lbl_perguntanivel.Text = pergunta_count.ToString();
 
             }
         }
