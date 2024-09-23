@@ -25,7 +25,7 @@ namespace MauiAppShowDoMilhao
         private void toca_som()
         {
             string track = "";
-            switch (pergunta_count) 
+            switch (pergunta_count)
             {
                 case 1:
                     track = "1000.wav";
@@ -74,8 +74,9 @@ namespace MauiAppShowDoMilhao
                     break;
 
             }
-
             AudioManager.Current.CreatePlayer(FileSystem.OpenAppPackageFileAsync(track).Result).Play();
+        }
+
 
 
         private async void Button_CLicked_Proxima(object sender, EventArgs e)
@@ -132,22 +133,46 @@ namespace MauiAppShowDoMilhao
             }
             void avanca_Pergunta()
             {
-                if (pergunta_count <= 4)
+                if (pergunta_count <= 5)
                 {
                     premio = premio + 1000;
-                    this.BindingContext = App.getRandomPereguntaFacil();            
+                    this.BindingContext = App.getRandomPereguntaFacil();
+                    lbl_nivel.Text = "Fácil";
+                }
+
+                if(pergunta_count ==6)
+                {
+                    premio = 10000;
+                    this.BindingContext = App.getRandomPereguntaMedia();
+                    lbl_nivel.Text = "Média"
                 }
 
                 if (pergunta_count > 5 && pergunta_count <= 10)
                 {
                     premio = premio + 10000;
                     this.BindingContext = App.getRandomPereguntaMedia();
+                        lbl_nivel.Text = "Média";
+                    }
+
+                if (pergunta_count == 10)
+                {
+                    premio = 10000;
+                    this.BindingContext = App.getRandomPereguntaMedia();
+                    lbl_nivel.Text = "Média";
                 }
 
-                if (pergunta_count > 10 && pergunta_count < 15)
+                if (pergunta_count > 11 && pergunta_count <= 15)
                 {
                     premio = premio + 100000;
                     this.BindingContext = App.getRandomPereguntaDificil();
+                    lbl_nivel.Text = "Difícil";
+                    }
+
+                if (pergunta_count == 16)
+                {
+                    premio = 10000;
+                    this.BindingContext = App.getRandomPereguntaFinal();
+                    lbl_nivel.Text = "Final";
                 }
 
             }
